@@ -16,5 +16,8 @@
     "url": "https://github.com/calvin-cs262-fall2022-teamH/Service/issues"
   },
   "homepage": "https://github.com/calvin-cs262-fall2022-teamH/Service#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "pg-promise": "^10.15.0"
+  }
 }
