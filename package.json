@@ -18,6 +18,7 @@
   "homepage": "https://github.com/calvin-cs262-fall2022-teamH/Service#readme",
   "description": "",
   "dependencies": {
+    "express": "^4.18.2",
     "pg-promise": "^10.15.0"
   }
 }
