@@ -85,7 +85,7 @@ function createUser(req, res, next) {
 }
 
 function createSchedule(req, res, next) {
-    db.one('INSERT INTO Scheule(ID, semesterYear, userID) VALUES (${id}, ${semesterYear}, ${userID}) RETURNING id', req.body)
+    db.one('INSERT INTO Schedule(ID, semesterYear, userID) VALUES (${id}, ${semesterYear}, ${userID}) RETURNING id', req.body)
         .then(data => {
             res.send(data);
         })
