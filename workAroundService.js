@@ -16,10 +16,10 @@ router.use(express.json());
 
 router.get("/", readStudents);
 router.get("/:name", readSchedules);
-router.get("/:name/:scheduleID", readEvents);
+router.get("/:name/:semesterYear", readEvents);
 router.post('/', createUser);
 router.post('/:name', createSchedule);
-router.post('/:name/:scheduleID', addClasses)
+router.post('/:name/:semesterYear', addClasses)
 router.delete('/:name', deleteStudent);
 router.delete('/:name/:semesterYear', deleteSchedule);
 router.delete('/:name/:semesterYear/:eventName', deleteEvent);
