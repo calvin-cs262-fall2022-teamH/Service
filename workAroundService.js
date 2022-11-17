@@ -19,7 +19,7 @@ router.get("/:name", readSchedules);
 router.get("/:name/:semesterYear", readEvents);
 router.post('/', createUser);
 router.post('/:name', createSchedule);
-router.post('/:name/:semesterYear', addClasses)
+router.post('/:name/:semesterYear', addEvent)
 router.delete('/:name', deleteStudent);
 router.delete('/:name/:semesterYear', deleteSchedule);
 router.delete('/:name/:semesterYear/:eventName', deleteEvent);
@@ -55,7 +55,7 @@ function returnDataOr404(res, data) {
 }
 
 function readSchedules(req, res, next) {
-    db.many("SELECT semesterYear FROM Schedule, Users WHERE Schedule.userID = Users.ID AND Users.name=${name}", req.params)
+    db.many("SELECT * FROM Schedule, Users WHERE Schedule.userID = Users.ID AND Users.name=${name}", req.params)
         .then(data => {
             returnDataOr404(res, data);
         })
@@ -65,7 +65,7 @@ function readSchedules(req, res, next) {
 }
 
 function readEvents(req, res, next) {
-    db.many("SELECT Events.name FROM Events, Schedule, Users WHERE Users.ID=Schedule.userID AND Schedule.ID=Events.scheduleID AND Users.name=${name} AND Schedule.semesterYear=${semesterYear}", req.params)
+    db.many("SELECT * FROM Events, Schedule, Users WHERE Users.ID=Schedule.userID AND Schedule.ID=Events.scheduleID AND Users.name=${name} AND Schedule.semesterYear=${semesterYear}", req.params)
         .then(data => {
             returnDataOr404(res, data);
         })
@@ -94,8 +94,8 @@ function createSchedule(req, res, next) {
         });
 }
 
-function addClasses(req, res, next) {
-    db.one('INSERT INTO Event(eventID, name, startTime, endTime, dayDesignation, location, eventLead, scheduleID) VALUES (${eventID}, ${name}, ${startTime}, ${endTime}, ${dayDesignation}, ${location}, ${eventLead}, ${scheduleID}) RETURNING id', req.body)
+function addEvent(req, res, next) {
+    db.one('INSERT INTO Events(eventID, name, startTime, endTime, dayDesignation, location, eventLead, scheduleID) VALUES (${eventID}, ${name}, ${startTime}, ${endTime}, ${dayDesignation}, ${location}, ${eventLead}, ${scheduleID}) RETURNING id', req.body)
         .then(data => {
             res.send(data);
         })

@@ -20,7 +20,7 @@ CREATE TABLE Events (
     name varchar(50) NOT NULL,
     startTime varchar(50),
     endTime varchar(50),
-    dayDesignation varchar(5),
+    dayDesignation varchar(10),
     location varchar(50) NOT NULL,
     eventLead varchar(50),
     scheduleID integer REFERENCES Schedule(ID)
