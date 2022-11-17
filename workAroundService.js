@@ -95,7 +95,7 @@ function createSchedule(req, res, next) {
 }
 
 function addEvent(req, res, next) {
-    db.one('INSERT INTO Events(eventID, name, startTime, endTime, dayDesignation, location, eventLead, scheduleID) VALUES (${eventID}, ${name}, ${startTime}, ${endTime}, ${dayDesignation}, ${location}, ${eventLead}, ${scheduleID}) RETURNING id', req.body)
+    db.one('INSERT INTO Events(eventID, name, startTime, endTime, dayDesignation, location, eventLead, scheduleID) VALUES (${eventID}, ${name}, ${startTime}, ${endTime}, ${dayDesignation}, ${location}, ${eventLead}, ${scheduleID}) RETURNING eventID', req.body)
         .then(data => {
             res.send(data);
         })
