@@ -4,7 +4,7 @@
   "main": "workAroundService.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "workAroundService.js"
+    "start": "node workAroundService.js"
   },
   "repository": {
     "type": "git",
@@ -16,8 +16,5 @@
     "url": "https://github.com/calvin-cs262-fall2022-teamH/Service/issues"
   },
   "homepage": "https://github.com/calvin-cs262-fall2022-teamH/Service#readme",
-  "description": "",
-  "dependencies": {
-    "start": "^5.1.0"
-  }
+  "description": ""
 }
