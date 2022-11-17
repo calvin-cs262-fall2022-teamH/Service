@@ -55,7 +55,7 @@ function returnDataOr404(res, data) {
 }
 
 function readSchedules(req, res, next) {
-    db.oneOrNone("SELECT semesterYear FROM Schedule, Users WHERE Schedule.userID = Users.ID AND Users.name=${name}", req.params)
+    db.many("SELECT semesterYear FROM Schedule, Users WHERE Schedule.userID = Users.ID AND Users.name=${name}", req.params)
         .then(data => {
             returnDataOr404(res, data);
         })
@@ -65,7 +65,7 @@ function readSchedules(req, res, next) {
 }
 
 function readEvents(req, res, next) {
-    db.oneOrNone("SELECT Events.name FROM Events, Schedule, Users WHERE Users.ID=Schedule.userID AND Schedule.ID=Events.scheduleID AND Users.name=${name} AND Schedule.semesterYear=${semesterYear}", req.params)
+    db.many("SELECT Events.name FROM Events, Schedule, Users WHERE Users.ID=Schedule.userID AND Schedule.ID=Events.scheduleID AND Users.name=${name} AND Schedule.semesterYear=${semesterYear}", req.params)
         .then(data => {
             returnDataOr404(res, data);
         })
