@@ -65,7 +65,7 @@ function readSchedules(req, res, next) {
 }
 
 function readEvents(req, res, next) {
-    db.many("SELECT * FROM Events, Schedule, Users WHERE Users.ID=Schedule.userID AND Schedule.ID=Events.scheduleID AND Users.name=${name} AND Schedule.semesterYear=${semesterYear}", req.params)
+    db.many("SELECT eventID, events.name, events.starttime, events.endtime, daydesignation, events.location, eventLead, scheduleID FROM Events, Schedule, Users WHERE Users.ID=Schedule.userID AND Schedule.ID=Events.scheduleID AND Users.name=${name} AND Schedule.semesterYear=${semesterYear}", req.params)
         .then(data => {
             returnDataOr404(res, data);
         })
