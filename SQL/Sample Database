@@ -39,16 +39,16 @@ INSERT INTO Users VALUES (4, 'Kyle Richardson');
 INSERT INTO Users VALUES (5, 'Hailey Lu');
 INSERT INTO Users VALUES (6, 'Emily Kurt');
 
-INSERT INTO Schedule VALUES (1, 'Fall 2022', 3);
-INSERT INTO Schedule VALUES (2, 'Spring 2021', 4);
-INSERT INTO Schedule VALUES (3, 'Spring 2023', 5);
-INSERT INTO Schedule VALUES (4, 'Fall 2023', 2);
-INSERT INTO Schedule VALUES (5, 'Fall 2022', 6);
-INSERT INTO Schedule VALUES (6, 'Spring 2022', 4);
-INSERT INTO Schedule VALUES (7, 'Fall 2021', 2);
-INSERT INTO Schedule VALUES (8, 'Fall 2023', 5);
-INSERT INTO Schedule VALUES (9, 'Spring 2022', 3);
-INSERT INTO Schedule VALUES (10, 'Fall 2020', 3);
+INSERT INTO Schedule VALUES (1, '2022 Fall', 3);
+INSERT INTO Schedule VALUES (2, '2021 Spring', 4);
+INSERT INTO Schedule VALUES (3, '2023 Spring', 5);
+INSERT INTO Schedule VALUES (4, '2023 Fall', 2);
+INSERT INTO Schedule VALUES (5, '2022 Fall', 6);
+INSERT INTO Schedule VALUES (6, '2022 Spring', 4);
+INSERT INTO Schedule VALUES (7, '2021 Fall', 2);
+INSERT INTO Schedule VALUES (8, '2023 Fall', 5);
+INSERT INTO Schedule VALUES (9, '2022 Fall', 3);
+INSERT INTO Schedule VALUES (10, '2020 Fall', 3);
 
 
 
