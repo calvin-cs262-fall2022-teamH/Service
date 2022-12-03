@@ -52,17 +52,20 @@ INSERT INTO Schedule VALUES (10, 'Fall 2020', 3);
 
 
 
-INSERT INTO Events VALUES (1, 'CS-262 A', '2:00', '2:50', 'MW', 'SB-378', 'Vander Linden', 4);
-INSERT INTO Events VALUES (2, 'ENGL-220', '12:00', '1:30', 'TTH', 'FAC218', 'Hettinga', 2);
-INSERT INTO Events VALUES (3, 'MATH-231', '3:00', '3:50', 'MTWF', 'NB-178', 'Smith', 3);
-INSERT INTO Events VALUES (4, 'PHYS-133', '9:00', '10:50', 'MWF', 'SB-111', 'Harrison', 3);
-INSERT INTO Events VALUES (5, 'MUSIC-111', '2:00', '2:50', 'T', 'FAC-232', 'Blake', 7);
-INSERT INTO Events VALUES (6, 'CHEM-331', '2:00', '2:50', 'WF', 'SB-123', 'Simpson', 9);
-INSERT INTO Events VALUES (7, 'CS-101', '2:00', '2:50', 'TH', 'SB-234', 'Cornwell', 2);
-INSERT INTO Events VALUES (8, 'BIO-123', '2:00', '2:50', 'MTWF', 'DH-378', 'Hall-Medill', 4);
-INSERT INTO Events VALUES (9, 'CLUB', '2:00', '2:50', 'M', 'FAC-378', NULL, 8);
-INSERT INTO Events VALUES (10, 'MATH-354', '2:00', '2:50', 'TW', 'NB-231', NULL, 10);
-INSERT INTO Events VALUES (11, 'CLUB', '2:00', '2:50', 'MTH', 'FAC-125', 'Bella', 1);
-INSERT INTO Events VALUES (12, 'BIO LAB', '2:00', '2:50', 'WTHF', 'SB-128', 'Yoshida',3);
+INSERT INTO Events VALUES (1, 'CS-262 A', '14:00', '14:50', 'MW', 'SB-378', 'Vander Linden', 4);
+INSERT INTO Events VALUES (2, 'ENGL-220', '12:00', '13:30', 'TTH', 'FAC218', 'Hettinga', 2);
+INSERT INTO Events VALUES (3, 'MATH-231', '15:00', '15:50', 'MTWF', 'NB-178', 'Smith', 3);
+INSERT INTO Events VALUES (4, 'PHYS-133', '21:00', '22:50', 'MWF', 'SB-111', 'Harrison', 3);
+INSERT INTO Events VALUES (5, 'MUSIC-111', '14:00', '14:50', 'T', 'FAC-232', 'Blake', 7);
+INSERT INTO Events VALUES (6, 'CHEM-331', '14:00', '14:50', 'WF', 'SB-123', 'Simpson', 9);
+INSERT INTO Events VALUES (7, 'CS-101', '14:00', '14:50', 'TH', 'SB-234', 'Cornwell', 2);
+INSERT INTO Events VALUES (8, 'BIO-123', '14:00', '14:50', 'MTWF', 'DH-378', 'Hall-Medill', 4);
+INSERT INTO Events VALUES (9, 'CLUB', '14:00', '14:50', 'M', 'FAC-378', NULL, 8);
+INSERT INTO Events VALUES (10, 'MATH-354', '14:00', '14:50', 'TW', 'NB-231', NULL, 10);
+INSERT INTO Events VALUES (11, 'CLUB', '14:00', '14:50', 'MTH', 'FAC-125', 'Bella', 1);
+INSERT INTO Events VALUES (12, 'BIO LAB', '14:00', '14:50', 'WTHF', 'SB-128', 'Yoshida',3);
+INSERT INTO Events VALUES (13, 'class 1', '8:00', '8:50', 'MTWThFSSu', 'place1', 'Leader1',4);
+INSERT INTO Events VALUES (14, 'class 2', '12:00', '13:50', 'MWF', 'place2', 'Leader2',4);
+INSERT INTO Events VALUES (15, 'class 3', '12:00', '15:50', 'TTh', 'place3', 'Leader3',4);
 
 
