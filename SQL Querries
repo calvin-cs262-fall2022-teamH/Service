@@ -1,0 +1,13 @@
+--Returns all events along with Schedules that Kyle has had
+SELECT Events.name, Schedule.semesterYear 
+FROM Events, Schedule, Users 
+WHERE scheduleID = Schedule.ID
+AND userID = Users.ID
+AND Users.name LIKE '%Kyle%'
+
+--Returns all Schedules owned by Peter Smith
+SELECT semesterYear
+FROM Schedule, Users
+WHERE userID = Users.ID
+AND Users.name LIKE '%Peter%'
+

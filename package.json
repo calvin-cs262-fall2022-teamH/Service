@@ -1,0 +1,24 @@
+{
+  "name": "workaround",
+  "version": "1.0.0",
+  "main": "workAroundService.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node workAroundService.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calvin-cs262-fall2022-teamH/Service.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/calvin-cs262-fall2022-teamH/Service/issues"
+  },
+  "homepage": "https://github.com/calvin-cs262-fall2022-teamH/Service#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg-promise": "^10.15.0"
+  }
+}
