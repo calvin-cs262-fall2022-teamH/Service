@@ -17,9 +17,12 @@ router.use(express.json());
 router.get("/", readStudents);
 router.get("/:name", readSchedules);
 router.get("/:name/:semesterYear", readEvents);
-router.put('/', createUser);
-router.put('/:name', createSchedule);
-router.put('/:name/:semesterYear', addEvent)
+router.post('/', createUser);
+router.post('/:name', createSchedule);
+router.post('/:name/:semesterYear', addEvent)
+router.put('/', updateUser);
+router.put('/:name', updateSchedule);
+router.put('/:name/:semesterYear', updateEvent)
 router.delete('/:name', deleteStudent);
 router.delete('/:name/:semesterYear', deleteSchedule);
 router.delete('/:name/:semesterYear/:eventName', deleteEvent);
@@ -104,6 +107,35 @@ function addEvent(req, res, next) {
         });
 }
 
+function updateUser(req, res, next) {
+    db.one('UPDATE Users SET ID=${id}, name=${name} RETURNING id', req.body)
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            next(err);
+        });
+}
+
+function updateSchedule(req, res, next) {
+    db.one('UPDATE Schedule SET ID=${id}, semesterYear=${semesterYear}, userID=${userID} RETURNING id', req.body)
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            next(err);
+        });
+}
+
+function updateEvent(req, res, next) {
+    db.one('UPDATE Events SET eventID=${eventID}, name=${name}, startTime=${startTime}, endTime=${endTime}, dayDesignation=${dayDesignation}, location=${location}, eventLead=${eventLead}, scheduleID=${scheduleID} RETURNING eventID', req.body)
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            next(err);
+        });
+}
 function deleteStudent(req, res, next) {
     db.oneOrNone('DELETE FROM Events USING Schedule, Users WHERE Schedule.ID=Events.scheduleID AND '
     +'Users.ID=Schedule.userID AND Users.name=${name}; '
