@@ -137,7 +137,7 @@ function updateEvent(req, res, next) {
         });
 }
 function deleteStudent(req, res, next) {
-    db.oneOrNone('DELETE FROM Users USING Schedule, Events WHERE Schedule.ID=Events.scheduleID AND '
+    db.oneOrNone('DELETE FROM Events USING Schedule, Users WHERE Schedule.ID=Events.scheduleID AND '
     +'Users.ID=Schedule.userID AND Users.name=${name}; '
     +'DELETE FROM Schedule USING Users WHERE Users.ID=Schedule.userID AND Users.name=${name};'
     +'DELETE FROM Users WHERE name=${name}', req.params)
@@ -150,10 +150,10 @@ function deleteStudent(req, res, next) {
 }
 
 function deleteSchedule(req, res, next) {
-    db.oneOrNone('DELETE FROM Schedule USING Events, Users WHERE Schedule.ID=Events.scheduleID AND '
+    db.oneOrNone('DELETE FROM Events USING Schedule, Users WHERE Schedule.ID=Events.scheduleID AND '
     +'Users.ID=Schedule.userID AND Users.name=${name} AND Schedule.semesterYear=${semesterYear}; '
     +'DELETE FROM Schedule USING Users WHERE Users.ID=Schedule.userID AND Users.name=${name} AND '
-    +'Schedule.semesterYear=${semesterYear} RETURNING ID;', req.params)
+    +'Schedule.semesterYear=${semesterYear} RETURNING Schedule.ID;', req.params)
         .then(data => {
             returnDataOr404(res, data);
         })
